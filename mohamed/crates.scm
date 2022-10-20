@@ -778,4 +778,4 @@ supported by Cargo.")
 the library crate of Cargo.")
     (license (list license:expat license:asl2.0))))
 
-rust-cargo-0.65
+;;rust-cargo-0.65
