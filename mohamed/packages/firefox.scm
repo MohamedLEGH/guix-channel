@@ -48,6 +48,7 @@
   #:use-module ((guix build utils) #:select (alist-replace))
 
   #:use-module (gnu packages)
+  #:use-module (nongnu packages)
   #:use-module (nongnu packages mozilla)
   #:use-module (gnu packages xdisorg)
   #:use-module (gnu packages xorg))
