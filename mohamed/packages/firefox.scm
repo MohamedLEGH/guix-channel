@@ -86,7 +86,7 @@
   #:use-module (gnu packages xdisorg)
   #:use-module (gnu packages xorg))
 
-(define-public firefox
+(define-public firefox-105
   (package
     (inherit firefox-esr)
     (name "firefox")
@@ -115,7 +115,7 @@
      "Full-featured browser client built from Firefox source tree, without
 the official icon and the name \"firefox\".")))
 
-(define-public firefox/wayland
+(define-public firefox/wayland-105
   (package
     (inherit firefox)
     (name "firefox-wayland")
