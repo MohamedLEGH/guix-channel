@@ -48,6 +48,38 @@
   #:use-module (gnu packages crates-io)
   #:use-module (srfi srfi-1))
 
+(define-public rust-lipsum-0.8
+  (package
+    (name "rust-lipsum")
+    (version "0.8.2")
+    (source (origin
+              (method url-fetch)
+              (uri (crate-uri "lipsum" version))
+              (file-name (string-append name "-" version ".tar.gz"))
+              (sha256
+               (base32
+                "1x39vkjyr23bgm3s9m9rl56q1gj0rvxqjsb6hr2f8dzky531hid8"))))
+    (build-system cargo-build-system)
+    (arguments
+     `(#:cargo-inputs (("rust-rand" ,rust-rand-0.8)
+                       ("rust-rand-chacha" ,rust-rand-chacha-0.3))
+       #:cargo-development-inputs (("rust-version-sync" ,rust-version-sync-0.9))))
+    (home-page "https://github.com/mgeisler/lipsum/")
+    (synopsis
+     "Lipsum is a lorem ipsum text generation library. It generates
+pseudo-random Latin text. Use this if you need filler or dummy text
+for your application.
+
+The text is generated using a simple Markov chain, which you can
+instantiate to generate your own pieces of pseudo-random text.
+")
+    (description
+     "Lipsum is a lorem ipsum text generation library.  It generates pseudo-random
+Latin text.  Use this if you need filler or dummy text for your application.
+The text is generated using a simple Markov chain, which you can instantiate to
+generate your own pieces of pseudo-random text.")
+    (license license:expat)))
+
 (define-public rust-linux-raw-sys-0.0.46
   (package
     (name "rust-linux-raw-sys")
